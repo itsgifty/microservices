@@ -1,0 +1,10 @@
+server:
+  port: 9296
+spring:
+  applicaiton:
+    name: CLOUD-CONFIG-SERVER
+    cloud:
+      config:
+        server:
+          uri: https://github.com/itsgifty/config-server
+          clone-on-start: true
