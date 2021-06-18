@@ -17,14 +17,14 @@ public class UserService {
     @Autowired
     private RestTemplate restTemplate;
     public User saveUser(User user) {
-        log.info("inside save user of user service");
+      //  log.info("inside save user of user service");
         return userRepository.save(user);
     }
 
     public ResponseTemplateVO getUserWithDepartmentId(Long userId) {
         ResponseTemplateVO vo = new ResponseTemplateVO();
         User user = userRepository.findByUserId(userId);
-        log.info("inside save user of user service");
+      //  log.info("inside save user of user service");
         Department department = restTemplate.getForObject("http://localhost:9001/departments/" + user.getDepartmentId(),Department.class);
         vo.setUser(user);
         vo.setDepartment(department);
